@@ -1,4 +1,5 @@
 import logging
+import pickle
 import time
 
 from core.dahuffman import HuffmanCodec
@@ -15,7 +16,11 @@ def compress_file(text_file: str, output_file: str):
             logging.info(f"Compresing {text_file} to {output_file}")
             encoded = codec.encode(text)
             logging.info(f"Writting to {output_file}")
-            file.write(encoded)
+            compress_data = {
+                "codec_data": codec.get_codec_data(),
+                "encoded": encoded,
+            }
+            pickle.dump(compress_data, file)
 
 
 def compress_file_logging_time(text_file: str, output_file: str):

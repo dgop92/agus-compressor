@@ -237,6 +237,26 @@ class PrefixCodec:
             )
         )
 
+    def get_codec_data(self) -> dict:
+        """
+        Return codec data for serialization.
+        :return:
+        """
+        return {
+            "code_table": self.get_code_table(),
+            "type": type(self),
+            "concat": self._concat,
+        }
+
+    @classmethod
+    def create_from_data(cls, data: dict) -> "PrefixCodec":
+        """
+        Create a PrefixCodec from codec data.
+        :param data:
+        :return:
+        """
+        return cls(data["code_table"], concat=data["concat"])
+
     @staticmethod
     def load(path: Union[str, Path]) -> "PrefixCodec":
         """

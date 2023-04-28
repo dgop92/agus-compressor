@@ -2,6 +2,7 @@ import argparse
 
 from config.logging import config_logger
 from core.compress import compress_file_logging_time
+from core.decompress import decompress_file_logging_time
 
 if __name__ == "__main__":
     config_logger()
@@ -15,3 +16,7 @@ if __name__ == "__main__":
         if args.output_file is None:
             args.output_file = "comprimido.elmejorprofesor"
         compress_file_logging_time(args.input_file, args.output_file)
+    elif args.command == "decompress":
+        if args.output_file is None:
+            args.output_file = "descomprimido-elmejorprofesor.txt"
+        decompress_file_logging_time(args.input_file, args.output_file)
