@@ -27,4 +27,4 @@ def compress_file_logging_time(text_file: str, output_file: str):
     start = time.time()
     compress_file(text_file, output_file)
     end = time.time()
-    logging.info(f"Compressing {text_file} took {end - start} seconds")
+    print(f"Compressing {text_file} took {end - start} seconds")

@@ -23,4 +23,4 @@ def decompress_file_logging_time(compressed_file: str, output_file: str):
     start = time.time()
     decompress_file(compressed_file, output_file)
     end = time.time()
-    logging.info(f"Decompressing {compressed_file} took {end - start} seconds")
+    print(f"Decompressing {compressed_file} took {end - start} seconds")
