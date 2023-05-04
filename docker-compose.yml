@@ -1,0 +1,10 @@
+version: "3.1"
+
+services:
+
+  mympi:
+    image: augustosalazar/un_mpi_image:v4
+    container_name: mympi_container
+    volumes:
+      - .:/app
+    restart: "no"
