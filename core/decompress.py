@@ -14,7 +14,7 @@ def decompress_file(compressed_file: str, output_file: str):
         logging.info(f"Decompressing {compressed_file} to {output_file}")
         decoded = codec.decode(compress_data["encoded"])
 
-        with open(output_file, "w") as file:
+        with open(output_file, "wb") as file:
             logging.info(f"Writing to {output_file}")
             file.write(decoded)
 

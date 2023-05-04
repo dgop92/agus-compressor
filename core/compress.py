@@ -3,18 +3,17 @@ import pickle
 import time
 
 from core.dahuffman import HuffmanCodec
-from core.frecuencies import get_frequencies_of_text
 
 
 def compress_file(text_file: str, output_file: str):
     logging.info(f"Reading {text_file}")
-    with open(text_file, "r") as file:
-        text = file.read()
-        codec = HuffmanCodec.from_frequencies(get_frequencies_of_text(text))
+    with open(text_file, "rb") as file:
+        content = file.read()
+        codec = HuffmanCodec.from_data(content)
 
         with open(output_file, "wb") as file:
             logging.info(f"Compresing {text_file} to {output_file}")
-            encoded = codec.encode(text)
+            encoded = codec.encode(content)
             logging.info(f"Writting to {output_file}")
             compress_data = {
                 "codec_data": codec.get_codec_data(),
