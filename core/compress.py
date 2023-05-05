@@ -25,7 +25,7 @@ def compress_file(text_file: str, output_file: str):
 
 
 def compress_content_in_parallel(
-    content: str,
+    content: bytes,
     codec: HuffmanCodec,
     n_cores=2,
 ) -> list[bytes]:
@@ -47,10 +47,10 @@ def compress_content_in_parallel(
 
 def compress_file_in_parallel(text_file: str, output_file: str, n_cores=2):
     logging.info(f"Reading {text_file}")
-    with open(text_file, "r") as f:
+    with open(text_file, "rb") as f:
         content = f.read()
 
-    codec = HuffmanCodec.from_frequencies(get_frequencies_of_text(content))
+    codec = HuffmanCodec.from_data(content)
 
     logging.info(f"Compresing {text_file} in parallel")
     compressed_content = compress_content_in_parallel(content, codec, n_cores)

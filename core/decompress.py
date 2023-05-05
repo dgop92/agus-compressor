@@ -29,7 +29,7 @@ def decompress_content_in_parallel(
     with Pool(processes=n_cores) as pool:
         results = pool.map(codec.decode, compressed_content)
 
-    return "".join(results)
+    return b"".join(results)
 
 
 def decompress_file_in_parallel(compressed_file: str, output_file: str, n_cores=2):
@@ -45,7 +45,7 @@ def decompress_file_in_parallel(compressed_file: str, output_file: str, n_cores=
     )
 
     logging.info(f"Writing to {output_file}")
-    with open(output_file, "w") as f:
+    with open(output_file, "wb") as f:
         f.write(decompressed_content)
 
 
