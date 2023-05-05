@@ -7,4 +7,5 @@ services:
     container_name: mympi_container
     volumes:
       - .:/app
+    working_dir: /app
     restart: "no"
