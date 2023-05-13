@@ -5,7 +5,7 @@ from core.decompress import decompress_file_logging_time
 
 if __name__ == "__main__":
     config_logger()
-    parser = argparse.ArgumentParser(description="A compressor decompressor utility")
+    parser = argparse.ArgumentParser(description="A decompressor utility")
     parser.add_argument("input_file", type=str, nargs="?")
     parser.add_argument("output_file", type=str, nargs="?")
     args = parser.parse_args()

@@ -67,4 +67,4 @@ if __name__ == "__main__":
             pickle.dump(compress_data, f)
 
         end = time.time()
-        print(f"Compressing {text_file} took {end - start} seconds")
+        print(end - start)
