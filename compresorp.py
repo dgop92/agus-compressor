@@ -19,7 +19,7 @@ if __name__ == "__main__":
     end = 0
 
     if args.output_file is None:
-        args.output_file = "comprimido.elmejorprofesor"
+        args.output_file = "comprimidop.elmejorprofesor"
 
     text_file = args.input_file
     output_file = args.output_file

@@ -17,16 +17,13 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     if args.input_file is None:
-        args.input_file = "comprimido.elmejorprofesor"
+        args.input_file = "comprimidop.elmejorprofesor"
 
     if args.output_file is None:
-        args.output_file = "descomprimido-elmejorprofesor.txt"
+        args.output_file = "descomprimidop-elmejorprofesor.txt"
 
     start = 0
     end = 0
-
-    if args.output_file is None:
-        args.output_file = "comprimido.elmejorprofesor"
 
     compressed_file = args.input_file
     output_file = args.output_file
